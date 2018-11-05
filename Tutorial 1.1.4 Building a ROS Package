@@ -1,0 +1,4 @@
+$ cd ~/catkin_ws/
+$ ls src
+$ catkin_make
+$ ls
