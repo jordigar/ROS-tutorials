@@ -1,1 +1,15 @@
-
+$ sudo apt-get install ros-melodic-ros-tutorials    //not necessary, we have installed before
+$ roscore         //I get the next problem:
+      Command 'roscore' not found
+//I have solved de problem doing:
+$ source /opt/ros/melodic/setup.bash
+$ roscore         //now it works ok
+//I open a new terminal, very important don't close the previous terminal with roscore
+$ rosnode list    //I have the same error like roscore, it's necessary modify setup.bash
+$ source /opt/ros/melodic/setup.bash
+$ rosnode list    //now we don't have the error
+$ rosnode info /rosout
+$ rosrun turtlesim turtlesim_node
+$ rosnode list    //Open a new terminal
+$ rosrun turtlesim turtlesim_node __name:=my_turtle     //you can change the name
+$ rosnode ping my_turtle
