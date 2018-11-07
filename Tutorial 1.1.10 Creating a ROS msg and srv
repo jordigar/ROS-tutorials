@@ -1,0 +1,3 @@
+$ roscd beginner_tutorials
+$ mkdir msg
+$ echo "int64 num" > msg/Num.msg
