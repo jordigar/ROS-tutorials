@@ -1,0 +1,4 @@
+$ rosed roscpp Logger.msg
+$ rosed roscpp <tab><tab>
+$ export EDITOR='nano -w'     //We change default editor vim for nano, also we can chosee emac:   $ export EDITOR='emacs -nw'
+$ echo $EDITOR
