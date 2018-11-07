@@ -1,1 +1,18 @@
+$ source /opt/ros/melodic/setup.bash    //I get error if I don-t call setup.bash, I need to solve this
+
+$ rosservice list
+$ rosservice type /clear
+$ rosservice call /clear
+$ rosservice type /spawn | rossrv show 
+$ rosservice call /spawn 2 2 0.2 ""
+
+$ rosparam list
+$ rosparam set /background_r 150
+$ rosservice call /clear
+$ rosparam get /background_g
+$ rosparam get /                    //show all the parameters
+$ rosparam dump params.yaml         //new file params.yaml
+$ rosparam load params.yaml copy    //copy file params.yaml to file copy
+$ rosparam get /copy/background_b
+
 
