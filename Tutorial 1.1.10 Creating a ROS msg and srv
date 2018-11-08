@@ -45,3 +45,57 @@ Unable to load msg [beginner_tutorials/Num]: Cannot locate message [Num]: unknow
 //Also now roscd can't found beginner_tutorials
 jordi@jordi-MacBookPro:~$ roscd beginner_tutorials
 roscd: No such package/stack 'beginner_tutorials'
+
+PROBLEM IS SOLVED!!!
+jordi@jordi-MacBookPro:~$ cd catkin_ws/
+jordi@jordi-MacBookPro:~/catkin_ws$ catkin_make
+Base path: /home/jordi/catkin_ws
+Source space: /home/jordi/catkin_ws/src
+Build space: /home/jordi/catkin_ws/build
+Devel space: /home/jordi/catkin_ws/devel
+Install space: /home/jordi/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/jordi/catkin_ws/build"
+####
+####
+#### Running command: "make -j4 -l4" in "/home/jordi/catkin_ws/build"
+####
+jordi@jordi-MacBookPro:~/catkin_ws$ source devel/setup.bash
+jordi@jordi-MacBookPro:~/catkin_ws$ roscd beginner_tutorials
+jordi@jordi-MacBookPro:~/catkin_ws/src/beginner_tutorials$ rosmsg show beginner_tutorials/Num
+int64 num
+
+//Now I continue with exercise
+$ roscd beginner_tutorials
+$ mkdir srv
+$ roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
+
+//CMakeList.txt
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+rossrv show beginner_tutorials/AddTwoInts
+
+//CMakeList.txt
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
+$ roscd beginner_tutorials
+$ cd ../..
+$ catkin_make install
+$ cd -
+
+$ rosmsg -h
+$ rosmsg show -h
+
+
+
+
+
+
+
+
