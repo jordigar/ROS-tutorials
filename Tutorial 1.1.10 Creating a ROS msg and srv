@@ -1,3 +1,38 @@
 $ roscd beginner_tutorials
 $ mkdir msg
 $ echo "int64 num" > msg/Num.msg
+$ echo "string first_name" > msg/FirstName.msg
+$ echo "string last_name" > msg/LastName.msg
+$ echo "uint8 age" > msg/Age.msg
+$ echo "uint32 score" > msg/Score.msg
+
+<build_depend>message_generation</build_depend>   //add in package.xml
+<exec_depend>message_runtime</exec_depend>        //add in package.xml
+
+//CMakeLists.tx
+find_package(catkin REQUIRED COMPONENTS
+   roscpp
+   rospy
+   std_msgs
+   message_generation       //afegeixo
+)
+
+catkin_package(
+  INCLUDE_DIRS include              //trec #
+  LIBRARIES beginner_tutorials      //trec #
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime      //trec # i afegeixo message_runtime
+  DEPENDS system_lib                //trec # 
+)
+
+add_message_files(     //trec #
+    FILES               //trec #
+#   Message1.msg
+#   Message2.msg
+    Num.msg              //afegeixo
+)
+
+# generate_messages(      //aquestes linies ja les teniem comentades, no fem res
+#   DEPENDENCIES
+#   std_msgs
+# )
+
