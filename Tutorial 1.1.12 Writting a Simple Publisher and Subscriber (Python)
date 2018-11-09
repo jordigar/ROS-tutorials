@@ -1,1 +1,14 @@
+$ roscd beginner_tutorials
+$ mkdir scripts
+$ cd scripts
 
+//download and makes it executable
+$ wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py
+$ chmod +x talker.py
+
+$ roscd beginner_tutorials/scripts/
+$ wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py
+$ chmod +x listener.py
+
+$ cd ~/catkin_ws
+$ catkin_make
