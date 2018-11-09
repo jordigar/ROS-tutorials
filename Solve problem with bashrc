@@ -3,10 +3,7 @@ $ source /opt/ros/melodic/setup.bash
 
 I have solved doing:
 
-    Open your terminal
-    Write the command --> gedit ~/.bashrc
-    I file will open on gedit
-    Go to the bottom (my last line was "source /opt/ros/melodic/setup.bash" , for others it may differ)
-    Go under that line and write --> source [YOUR PATH]/catkin_ws/devel/setup.bash    (source ~/catkin_ws/devel/setup.bash)
-    Save and exit
-    Now with every new shell you open, it will source automatically
+$ nano .bashrc
+
+//add at the end of the file
+source /opt/ros/melodic/setup.bash
